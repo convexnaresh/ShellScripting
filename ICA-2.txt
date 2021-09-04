@@ -1,0 +1,12 @@
+mkdir cpsc207 #if dir does not exist.
+cd cpsc207 #if exists
+wget https://github.com/convexnaresh/301-sp/archive/main.zip 
+mv main.zip firstname_lastname.zip 
+unzip firstname_lastname.zip #we get directory named 301-sp-main
+cd 301-sp-main #move to dir, you can see several .py files
+wc -lwc hello-world.py #get the counts of lines, words and bytes
+vi firstname_lastname.txt, and add the number of lines, words and bytes that you recorded in (F) into this file. Save the file and quit. 
+cd .. #move back to parent of 301-sp-main directory.
+tar -cvf 301-sp-main.tar 301-sp-main # create a tar archive of the directory 301-sp-main 
+tar -tvf 301-sp-main.tar #view files in .tar
+
