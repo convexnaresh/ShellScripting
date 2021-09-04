@@ -1,0 +1,24 @@
+#Create a file using VI editor.
+vi songs.txt
+Press i (to enable INSERT mode)
+(type some texts in the file)
+Press ESC
+Type :w
+
+Put your cursor on any line.
+Press 3yy (copy three liens)
+Go to the end of the file.
+Press p (5 times to copy 3 lines)
+
+Type :wq
+
+Similarly follow the other tasks
+
+
+To copy the contents of two files in a single file.
+
+vi songs_and_artists.txt
+Type :r songs.txt (loads the contents of songs.txt onto this file)
+Type :r artists.txt
+Type :wq
+
