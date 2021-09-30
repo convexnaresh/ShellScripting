@@ -104,7 +104,7 @@ else
 echo "price less/eq to quantity";
 fi
 
-#Applicaitn(s) f Logical Operators in Shell
+#Applicaition(s) of Logical Operators in Shell
 #!/bin/bash
 a=”true” #assignment of variable.
 b=”false”
