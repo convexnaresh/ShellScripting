@@ -65,6 +65,72 @@ diff=$((price-quantity)) #does this give negative number?
 quot=$((price/quantity)) #does this gives floating number?
 echo “sum,prod,diff,quot =”, $sum, $prod, $diff, $quot
 
+
+#Arithmetic Operators/Incremnting a variable
+myvar=$[$myvar + 1] #outdated, do NOT use
+echo $myvar
+myvar=`expr $myvar + 1` #do NOT use
+echo $myvar
+myvar=$(expr $myvar + 1 )
+echo $myvar
+
+#Confusing because not using $
+echo "expressions w/o using \$"
+((myvar+=1)) 
+#just like myvar=$(($myvar+1)) #use it needed.
+echo $myvar
+((++myvar)) #pre-increment, don't use $
+echo $myvar
+((myvar++)) #post-increment, don't use $
+echo $myvar
+
+#Application(s) of Relational Operators
+#!/bin/bash
+price=5 #assignment of variable.
+quantity=10
+#Relational operators
+#logical operators: ==, !=, >, >=, <, <=
+if (($price == $quantity));then
+#spacing between operands and operator 
+##inside (()) does not matter
+echo "price and quantity are equal";
+else
+echo "price and quantity are NOT equal";
+fi
+
+if (($price > $quantity));then
+echo "price greater than quantity";
+else
+echo "price less/eq to quantity";
+fi
+
+#Applicaitn(s) f Logical Operators in Shell
+#!/bin/bash
+a=”true” #assignment of variable.
+b=”false”
+#Logical operator operators
+#Logical operators &, &&, ||, etc.
+if (($a == “true” && $b == “true” ));then
+echo "both are true";
+else
+echo "both are not true";
+fi
+
+if (($a == “true” ||  $b == “true” ));then
+echo "either a or b is true";
+else
+echo "None are true.";
+fi
+
+if (($a == “true” && $b == “true” ));then
+echo "both are true";
+else
+echo "both are not true";
+fi
+
+
+
+
                          
 
 
