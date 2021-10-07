@@ -1,4 +1,4 @@
-#Disclamair
+#Disclaimer
 
 #This program is just for students learning and demo purpose. It should not be used for other purposes besides learning.
 #Appropriate credit goes to different resources in the public domain.
