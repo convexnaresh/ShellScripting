@@ -250,4 +250,18 @@ For example, the script can be execuated as below to get desired result:
   name: rohan
   age group: adults
   GPA group: magna cum laude
+  
+  
+  HINTS:
+  You can use following syntax to test gpa in decimal:
+  gpa=3.6 
+  rng1=3.4 #lower bound
+  rng2=3.7 #upper bound
+  #check the range where gpa falls.
+  if (("$(echo "$gpa < $rng2" | bc )" == 1 && "$(echo "$gpa > $rng1" | bc )" == 1 )); then
+    echo "magna cum laude";
+  fi   
+  
+  
+  
 
