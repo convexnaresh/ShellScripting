@@ -261,15 +261,88 @@ For example, the script can be execuated as below to get desired result:
   if (("$(echo "$gpa < $rng2" | bc )" == 1 && "$(echo "$gpa > $rng1" | bc )" == 1 )); then
     echo "magna cum laude";
   fi   
-  
-  
-  ##===================================
+ 
+ #OR, w/o outer quote.
+ #check the range where gpa falls.
+if (($(echo "$gpa < $rng2" | bc ) == 1 && $(echo "$gpa > $rng1" | bc ) == 1 )); then
+  echo "magna cum laude";
+fi 
+
+
+##===================================
 # Test command and alternative of using test command using [ expr ] and [[ expr ]]
 
 #Switch Statements
 
+
+##===================================
 #Looping Structure
 
+#Type-1
+#!/bin/bash
+for i in 1 2 3 4 5
+do
+   echo "Welcome $i times"
+done
+
+#Type-2
+#!/bin/bash
+for i in {0..10..2}
+do
+   echo "Welcome $i times"
+done
+
+#C-Type
+#!/bin/bash
+for (( i=0; i<=10; i=i+2 ))
+do
+   echo "Welcome $i times"
+done
+
+#Type-3, General 
+#!/bin/bash
+for $i in $(seq 0 2 10)
+do
+    echo "Welcome $i times"
+done
+
+##===================================
+#Application of loops
+#Doing task for multiple times.
+#!/bin/bash
+touch myfile.txt
+for i in {1..5}
+do
+   cp myfile.txt "myfile-$i.txt";
+   #other commands and logic
+done
+
+#Processing output of a command.
+#!/bin/bash
+for var in $(ls)
+do
+   echo "Processing file $var"
+   #check if var ends with .txt and apply the required operation to the file variable.
+   #other commands and logic
+done
+
+#Processing user's input throug command line
+#!/bin/bash
+for var in $@
+do
+    echo $var
+    #Your logic
+    #Example: check if var is a number or string   
+    #if number then echo "$var is a number"
+    #else echo “$var is a string”
+done
+
+#processing a file word or line by line.
+for word in $(cat filename.txt)
+do
+    echo $word
+    #other commands and logic
+done
 
 ##===================================
 #Class Practice Problem-3
@@ -279,14 +352,17 @@ For example, the script can be execuated as below to get desired result:
 # 1. What user accounts you created on your system.
   # Write them in a file schoolusers.txt, all separated by a space
   # You need to remove all users in the file.
+  Hint: Use looping to remove user one by one.
 
 # 2. What groups you created on your system.
   # Write them in a file schoolgroups.txt, all separated by a space
   # You need to delte all groups in the file.
+  Hint: Use looping to remove groups by one.
   
 # 3. What directories (find out their absolute path) you created to share among users and groups.
   # Write them in a file schooldirs.txt, all separated by a space
   # You need to delete all directories in the file.
+  Hint: Use looping to remove dir one by one.
 
 # Again, in other words, write a shell script to undo task 1-3.
 
@@ -299,14 +375,18 @@ For example, the script can be execuated as below to get desired result:
 # 1. What user accounts you must create on your system.
   # Write them in a file schoolusers.txt, all separated by a space
   # You need to create all users in the file.
-
+  Hint: Use looping to add user one by one.
+  #How do you assign a new password to the user?
+  
 # 2. What groups you must create on your system.
   # Write them in a file schoolgroups.txt, all separated by a space
   # You need to create all groups in the file.
-  
+    Hint: Use looping to add group one by one.
+    
 # 3. What directories (find out their absolute path) you must create to share among users and groups you create in 1 and 2.
   # Write them in a file schooldirs.txt, all separated by a space
   # You need to crate all directories in the file.
+    Hint: Use looping to create directories one by one.
   
 # 4. Assign all directories the proper ownerships and permissions to the users and groups 
   
