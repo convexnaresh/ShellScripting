@@ -284,12 +284,33 @@ For example, the script can be execuated as below to get desired result:
   # Write them in a file schoolgroups.txt, all separated by a space
   # You need to delte all groups in the file.
   
-# 3. What directories you created to share among users and groups.
+# 3. What directories (find out their absolute path) you created to share among users and groups.
   # Write them in a file schooldirs.txt, all separated by a space
   # You need to delete all directories in the file.
 
 # Again, in other words, write a shell script to undo task 1-3.
 
+
+##===================================
+#Class Practice Problem-4
+
+#Write a shell script that completes the task of Programming Assignment-2.
+#Look into the following items of the task you need to complete.
+# 1. What user accounts you must create on your system.
+  # Write them in a file schoolusers.txt, all separated by a space
+  # You need to create all users in the file.
+
+# 2. What groups you must create on your system.
+  # Write them in a file schoolgroups.txt, all separated by a space
+  # You need to create all groups in the file.
+  
+# 3. What directories (find out their absolute path) you must create to share among users and groups you create in 1 and 2.
+  # Write them in a file schooldirs.txt, all separated by a space
+  # You need to crate all directories in the file.
+  
+# 4. Assign all directories the proper ownerships and permissions to the users and groups 
+  
+# Again, in other words, write a shell script to performs task 1-4.
 
   
   
