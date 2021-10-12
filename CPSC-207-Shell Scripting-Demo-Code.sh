@@ -263,5 +263,34 @@ For example, the script can be execuated as below to get desired result:
   fi   
   
   
+  ##===================================
+# Test command and alternative of using test command using [ expr ] and [[ expr ]]
+
+#Switch Statements
+
+#Looping Structure
+
+
+##===================================
+#Class Practice Problem-3
+
+#Write a shell script that undo the work you did as part of Programming Assignment-2.
+#Look into the following items of the task you completed while doing the assignment: 
+# 1. What user accounts you created on your system.
+  # Write them in a file schoolusers.txt, all separated by a space
+  # You need to remove all users in the file.
+
+# 2. What groups you created on your system.
+  # Write them in a file schoolgroups.txt, all separated by a space
+  # You need to delte all groups in the file.
+  
+# 3. What directories you created to share among users and groups.
+  # Write them in a file schooldirs.txt, all separated by a space
+  # You need to delete all directories in the file.
+
+# Again, in other words, write a shell script to undo task 1-3.
+
+
+  
   
 
