@@ -110,13 +110,13 @@ if (($price == $quantity));then
 ##inside (()) does not matter
 echo "price and quantity are equal";
 else
-echo "price and quantity are NOT equal";
+  echo "price and quantity are NOT equal";
 fi
 
 if (($price > $quantity));then
-echo "price greater than quantity";
+    echo "price greater than quantity";
 else
-echo "price less/eq to quantity";
+    echo "price less/eq to quantity";
 fi
 
 
@@ -128,21 +128,21 @@ b=”false”
 #Logical operator operators
 #Logical operators &, &&, ||, etc.
 if (($a == “true” && $b == “true” ));then
-echo "both are true";
+    echo "both are true";
 else
-echo "both are not true";
+    echo "both are not true";
 fi
 
 if (($a == “true” ||  $b == “true” ));then
-echo "either a or b is true";
+    echo "either a or b is true";
 else
 echo "None are true.";
 fi
 
 if (($a == “true” && $b == “true” ));then
-echo "both are true";
+    echo "both are true";
 else
-echo "both are not true";
+    echo "both are not true";
 fi
 
 #===================================
@@ -195,11 +195,9 @@ fi
 echo "min value is: $min"
 
 Output:
-0, 0.5
-0.5
-min value is: 10.35
-
-
+    0, 0.5
+    0.5
+    min value is: 10.35
 
 
 ##===========In-class problem========================
@@ -212,14 +210,14 @@ min value is: 10.35
 Once given correct inputs, the script should display the result of the operation given 
 through the command line.
 For example, the script can be execuated as below to get desired result:
-  $bash calc.sh 45 + 65
-  Output: 110
+    $bash calc.sh 45 + 65
+    Output: 110
 
-  $bash calc.sh 200 \ 10
-  Output: 20
+    $bash calc.sh 200 \ 10
+    Output: 20
 
-  $bash calc.sh 30 \* 20
-  Output: 600
+    $bash calc.sh 30 \* 20
+    Output: 600
 
 
 ##===========In-class problem========================
@@ -240,34 +238,36 @@ For example, the script can be execuated as below to get desired result:
 
 #Your program should display user's name, proper age group name and GPA group name according to user's command line inputs.
 
-  #Example:
-  #$./catlog.sh david 12 2.5 0
-  Output:
-  name: david
-  age group: child
-  GPA group: pass
+    #Example:
+    #$./catlog.sh david 12 2.5 0
+    Output:
+    name: david
+    age group: child
+    GPA group: pass
 
-  #$./catlog.sh rohan 42 3.9 42000
-  Output:
-  name: rohan
-  age group: adults
-  GPA group: magna cum laude
+    #$./catlog.sh rohan 42 3.9 42000
+    Output:
+    name: rohan
+    age group: adults
+    GPA group: magna cum laude
   
   
-  HINTS:
-  You can use following syntax to test gpa in decimal:
-  gpa=3.6 
-  rng1=3.4 #lower bound
-  rng2=3.7 #upper bound
-  #check the range where gpa falls.
-  if (("$(echo "$gpa < $rng2" | bc )" == 1 && "$(echo "$gpa > $rng1" | bc )" == 1 )); then
+#HINTS:
+#You can use following syntax to test gpa in decimal:
+
+#!/bin/bash
+gpa=3.6 
+rng1=3.4 #lower bound
+rng2=3.7 #upper bound
+#check the range where gpa falls.
+if (("$(echo "$gpa < $rng2" | bc )" == 1 && "$(echo "$gpa > $rng1" | bc )" == 1 )); then
     echo "magna cum laude";
-  fi   
+fi   
  
  #OR, w/o outer quote.
  #check the range where gpa falls.
 if (($(echo "$gpa < $rng2" | bc ) == 1 && $(echo "$gpa > $rng1" | bc ) == 1 )); then
-  echo "magna cum laude";
+    echo "magna cum laude";
 fi 
 
 
@@ -284,21 +284,21 @@ fi
 #!/bin/bash
 for i in 1 2 3 4 5
 do
-   echo "Welcome $i times"
+    echo "Welcome $i times"
 done
 
 #Type-2
 #!/bin/bash
 for i in {0..10..2}
 do
-   echo "Welcome $i times"
+    echo "Welcome $i times"
 done
 
 #C-Type
 #!/bin/bash
 for (( i=0; i<=10; i=i+2 ))
 do
-   echo "Welcome $i times"
+    echo "Welcome $i times"
 done
 
 #Type-3, General 
@@ -309,23 +309,23 @@ do
 done
 
 ##===================================
-#Application of loops
+#Applications of loops
 #Doing task for multiple times.
 #!/bin/bash
 touch myfile.txt
 for i in {1..5}
 do
-   cp myfile.txt "myfile-$i.txt";
-   #other commands and logic
+    cp myfile.txt "myfile-$i.txt";
+    #other commands and logic
 done
 
 #Processing output of a command.
 #!/bin/bash
 for var in $(ls)
 do
-   echo "Processing file $var"
-   #check if var ends with .txt and apply the required operation to the file variable.
-   #other commands and logic
+    echo "Processing file $var"
+    #check if var ends with .txt and apply the required operation to the file variable.
+    #other commands and logic
 done
 
 #Processing user's input throug command line
@@ -336,16 +336,41 @@ do
     #Your logic
     #Example: check if var is a number or string   
     #if number then echo "$var is a number"
-    #else echo “$var is a string”
+    #else echo "$var is a string"
 done
 
-#processing a file word or line by line.
+#processing a file word by word.
 for word in $(cat filename.txt)
 do
     echo $word
     #other commands and logic
 done
 
+What happens when you put double quote around $(cat filename.txt)?
+Ans: Try it.
+
+#processing a file line by line : Use WHILE loop
+while read varline; 
+do 
+    echo "$varline"
+done < filename.txt
+
+
+#processing a file word by word in each line;
+while IFS="" read -r field1 field2 field3 field4
+do
+    echo $field1
+    echo $field2
+    echo $field3
+done < filename.txt
+
+#processing a file word by word in each line; give a file descriptor 78 to the opened file.
+while IFS="" read -r 78 field1 field2 field3 field4
+do
+    echo $field1
+    echo $field2
+    echo $field3
+done 78< filename.txt
 
 ##===========In-class problem========================
 #Class Practice Problem-3
