@@ -326,6 +326,8 @@ message="Hello, how are you? I am speaking from Rome."
 for word in $message
 do
     echo "Processing $word"
+    echo "$word" | tr '[:lower:]' '[:upper:]'
+    echo -n "$word" | wc -c #exclude new line char.
     #other commands and logic
 done
 
@@ -367,6 +369,15 @@ while read varline;
 do 
     echo "$varline"
 done < filename.txt
+
+#Read from a file and store output to a file.
+while read varline; 
+do 
+    echo "$varline"
+done < filename.txt >>outfile.txt
+
+#Give input to while loop using "echo" command.
+echo "hello this is line by line processing" | while read line; do echo $line | wc -w ;done > output.txt  
 
 
 #processing a file word by word in each line;
