@@ -379,8 +379,18 @@ done 78< filename.txt
 #Look into the following items of the task you completed while doing the assignment: 
 # 1. What user accounts you created on your system.
   # Write them in a file schoolusers.txt, all separated by a space
+  #Remember, you do not write your username in the file.
   # You need to remove all users in the file.
   Hint: Use looping to remove user one by one.
+
+  #!/bin/bash
+  userfile=schoolusers.txt
+  for uservar in $(cat $userfile)
+  do
+    #remove the user, uservar
+    sudo userdel $uservar #use -r option to delete home directory
+  done
+  
 
 # 2. What groups you created on your system.
   # Write them in a file schoolgroups.txt, all separated by a space
