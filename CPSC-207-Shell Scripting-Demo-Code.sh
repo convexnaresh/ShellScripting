@@ -319,6 +319,19 @@ do
     #other commands and logic
 done
 
+#Processing a string.
+#!/bin/bash
+
+message="Hello, how are you? I am speaking from Rome."
+for word in $message
+do
+    echo "Processing $word"
+    #other commands and logic
+done
+
+#What happens when you put double quote around $message?
+#Ans: Try it.
+
 #Processing output of a command.
 #!/bin/bash
 for var in $(ls)
