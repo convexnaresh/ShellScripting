@@ -202,7 +202,7 @@ min value is: 10.35
 
 
 
-##===================================
+##===========In-class problem========================
 #Class Practice Problem-1
 #Write a shell script named 'calc.sh' that takes three command line inputs, and performs 
 #as a calculator as below:
@@ -221,6 +221,8 @@ For example, the script can be execuated as below to get desired result:
   $bash calc.sh 30 \* 20
   Output: 600
 
+
+##===========In-class problem========================
 #Class Practice Problem-2
 # Write a shell script catlog.sh that takes user's 4 different data values (name, age, gpa and salary) on the command line.
 # The script should also classify the user in different age groups and GPA groups as below.
@@ -344,7 +346,8 @@ do
     #other commands and logic
 done
 
-##===================================
+
+##===========In-class problem========================
 #Class Practice Problem-3
 
 #Write a shell script that undo the work you did as part of Programming Assignment-2.
@@ -367,7 +370,7 @@ done
 # Again, in other words, write a shell script to undo task 1-3.
 
 
-##===================================
+##===========In-class problem========================
 #Class Practice Problem-4
 
 #Write a shell script that completes the task of Programming Assignment-2.
