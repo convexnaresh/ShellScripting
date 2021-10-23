@@ -17,14 +17,12 @@ echo "========================"
 echo "check if a file exists"
 echo "Use of test commands"
 
-
 if test -e $filename;
 then
     echo "Valid file input is received."
 else
     echo "Invalid input file. Please enter the correct file."
 fi
-
 
 if [[ -e $filename ]]
 then
@@ -45,7 +43,6 @@ then
 else
     echo "Invalid gender input. Please enter either M or F or NR as gender"
 fi
-
 
 echo "Use of multiple double brackets"
 
@@ -100,7 +97,6 @@ do
     fi
 
 done < $filename
-
 
 echo "========================"
 echo "Count  the number of rows of the specific gender"
