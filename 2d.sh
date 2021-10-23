@@ -20,13 +20,11 @@ do
         echo -e -n "$j "
     done
     echo  
-    
 done
 
 echo
 echo "TRIANGLE-"
 echo
-
 for i in $(seq 0 1 10)
 do
     for j in $(seq 0  1 $i)
@@ -145,12 +143,9 @@ do
                     continue
                 fi
             fi
-
         else
             echo -n "$color"
         fi
     done
-    echo 
-
-
+    echo
 done
