@@ -46,3 +46,4 @@ done
 #Write a script to print a pyramid.
 #Write a script to print a US-like map using sequence of *, W and R. 
 Sequence of W for white strips; Sequence of R fro red strips.
+#https://www.inchcalculator.com/american-flag-size-proportions-calculator/
