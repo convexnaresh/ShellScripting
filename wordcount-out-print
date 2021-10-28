@@ -1,18 +1,20 @@
 (Output-1: In case file does not exist)
+
 Task-1
-File mytext.txt exists. Content of the file is:
+File mytext.txt does not exit. Creating a file..
+Content of the new file mytext.txt is:
 A quick brown dog tried to jump over a lazy fox . The dog fell over the lazy fox !
 Declaring an empty dictionary..
 
 Task-3
 All keys in the dictionary
-fox jump fell The to lazy dog . brown ! the A over tried quick a
+fox jump fell to lazy dog . brown ! the over tried quick a
 
 All values in the dictionary
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 After updating the counts: all values in the dictionary
-2 1 1 1 1 2 2 1 1 1 1 1 2 1 1 1
+2 1 1 1 2 2 1 1 1 2 2 1 1 2
 
 Task-5:
 
@@ -21,19 +23,17 @@ Task-5:
        fox | 2
       jump | 1
       fell | 1
-       The | 1
         to | 1
       lazy | 2
        dog | 2
          . | 1
      brown | 1
          ! | 1
-       the | 1
-         A | 1
+       the | 2
       over | 2
      tried | 1
      quick | 1
-         a | 1
+         a | 2
 -----------------------------
 
 
